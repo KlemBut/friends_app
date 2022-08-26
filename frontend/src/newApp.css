@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import-normalize;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  border-style: none;
+}
+
+.logo {
+  position: absolute;
+  top: 5px;
+  left: 100px;
+}
+.logo div {
+  background-image: url("./assets/logo1.svg");
+  background-size: 250px 50px;
+  width: 250px;
+  height: 50px;
+  filter: invert(100%) sepia(5%) saturate(2%) hue-rotate(149deg) brightness(104%) contrast(100%);
+}
+
+nav {
+  height: 120px;
+  background-color: #0892d0;
+  display: flex;
+  align-items: flex-end;
+}
+nav h2 {
+  font-weight: 600;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+nav ul .navButtonsWrapper {
+  display: flex;
+  justify-content: space-around;
+}
+nav ul .navButtonsWrapper div {
+  display: flex;
+  gap: 3rem;
+}
+nav ul .navButtonsWrapper div a {
+  text-decoration: none;
+  color: white;
+}
+nav ul .navButtonsWrapper div a li {
+  list-style: none;
+}
+nav ul .navButtonsWrapper div a:hover {
+  color: #a1ebff;
+}
+nav ul .navButtonsWrapper div .user::before {
+  background-image: url("./assets/user.svg");
+  margin-right: 0.5rem;
+  background-size: 20px 20px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  content: "";
+  filter: invert(100%) sepia(5%) saturate(2%) hue-rotate(149deg) brightness(104%) contrast(100%);
+}
+nav ul .navButtonsWrapper div:first-of-type {
+  margin-right: 10rem;
+}
+nav ul .navButtonsWrapper div:last-of-type {
+  margin-left: 10rem;
+}
+
+.registerWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.registerWrapper .itemWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  border-radius: 5px;
+  padding: 2rem;
+  box-shadow: rgba(161, 235, 255, 0.4) 0px 4px 12px;
+}
+.registerWrapper .itemWrapper div {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+.registerWrapper .itemWrapper div input,
+.registerWrapper .itemWrapper div select {
+  margin-bottom: 0.7rem;
+  height: 30px;
+  border: 1px solid rgba(161, 235, 255, 0.4);
+  padding: 0.3rem;
+}
+.registerWrapper .itemWrapper div label {
+  margin-bottom: 0.2rem;
+}
+.registerWrapper .itemWrapper div input[type=checkbox] {
+  height: 15px;
+}
+.registerWrapper .itemWrapper div .checkbox {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.carouselWrapper {
+  display: flex;
+}
+.carouselWrapper .imgWrapper {
+  width: 500px;
+  height: 400px;
+  box-shadow: rgba(161, 235, 255, 0.4) 0px 3px 8px;
+  padding: 1rem;
+}
+.carouselWrapper .imgWrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.carouselWrapper span {
+  display: flex;
+  align-items: center;
+}
+.carouselWrapper .leftArrow div {
+  background-image: url("./assets/leftArrow.svg");
+  background-size: 100px 100px;
+  width: 100px;
+  height: 100px;
+  filter: invert(53%) sepia(0%) saturate(1299%) hue-rotate(218deg) brightness(95%) contrast(91%);
+}
+.carouselWrapper .rightArrow div {
+  background-image: url("./assets/rightArrow.svg");
+  background-size: 100px 100px;
+  width: 100px;
+  height: 100px;
+  filter: invert(53%) sepia(0%) saturate(1299%) hue-rotate(218deg) brightness(95%) contrast(91%);
+}
+.carouselWrapper span[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.userWrapper {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+}
+.userWrapper .profileWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userWrapper .profileWrapper h3 {
+  text-transform: capitalize;
+}
+.userWrapper .leftSideWrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.userWrapper .leftSideWrapper h4 {
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.userWrapper .leftSideWrapper input {
+  height: 30px;
+  border: 1px solid rgba(161, 235, 255, 0.8);
+  padding: 0.3rem;
+}
+.userWrapper .leftSideWrapper span {
+  margin-top: 1rem;
+}
+
+.bigWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.bigWrapper .filterWrapper {
+  border-radius: 5px;
+  padding: 2rem;
+  box-shadow: rgba(161, 235, 255, 0.4) 0px 4px 12px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bigWrapper .filterWrapper .filterInputs {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+.bigWrapper .filterWrapper .filterInputs input,
+.bigWrapper .filterWrapper .filterInputs select {
+  margin-bottom: 0.7rem;
+  height: 30px;
+  border: 1px solid rgba(161, 235, 255, 0.4);
+  padding: 0.3rem;
+}
+.bigWrapper .filterWrapper .filterInputs fieldset {
+  margin-bottom: 0.7rem;
+  height: 75px;
+  border: 1px solid rgba(161, 235, 255, 0.4);
+  padding: 0.3rem;
+  display: flex;
+  gap: 1rem;
+}
+.bigWrapper .filterWrapper label {
+  margin-bottom: 0.2rem;
+}
+.bigWrapper .filterWrapper .sliderWrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+.bigWrapper .filterWrapper h3 {
+  text-align: center;
+  font-weight: 500;
+  margin-top: 0;
+}
+
+.swipeWrapper {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.swipeWrapper h2 {
+  text-align: center;
+  text-transform: capitalize;
+}
+.swipeWrapper div:last-of-type {
+  display: flex;
+  gap: 1rem;
+}
+
+.likesWrapper {
+  margin-top: 3rem;
+}
+.likesWrapper .buttonWrap {
+  display: flex;
+  margin-bottom: 0.7rem;
+}
+.likesWrapper .componentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.likesWrapper .componentWrapper .historyCardWrapper {
+  width: 50%;
+}
+.likesWrapper .componentWrapper .historyCardWrapper h3 {
+  text-align: center;
+  text-transform: capitalize;
+}
+.likesWrapper .componentWrapper .historyCardWrapper .carouselWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.button-19 {
+  -webkit-appearance: button;
+     -moz-appearance: button;
+          appearance: button;
+  background-color: #1899d6;
+  border: solid transparent;
+  border-radius: 5px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  line-height: 20px;
+  margin: calc(18.39px + 0.2rem) 0 0 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter 0.2s;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  background-color: #1cb0f6;
+  border: solid transparent;
+  border-radius: 5px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus,
+.button-18:main,
+.button-18:focus {
+  -webkit-user-select: auto;
+     -moz-user-select: auto;
+      -ms-user-select: auto;
+          user-select: auto;
+}
+
+.button-19:hover:not(:disabled),
+.button-18:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled,
+.button-18:disabled {
+  cursor: auto;
+}
+
+.button-18 {
+  -webkit-appearance: button;
+     -moz-appearance: button;
+          appearance: button;
+  background-color: #1cb0f6;
+  border: solid transparent;
+  border-radius: 5px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  line-height: 20px;
+  margin: calc(18.39px + 0.2rem) 0 0 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter 0.2s;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.button-18:after {
+  background-clip: padding-box;
+  background-color: #91d4e7;
+  border: solid transparent;
+  border-radius: 5px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}/*# sourceMappingURL=newApp.css.map */

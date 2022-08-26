@@ -1,0 +1,40 @@
+ PAGES
+alt+d to compl
+ REGISTRATION:
+✔ user registers with his username and password also on registration, user fill this form: @done (22/08/2022, 12:05:31)
+☐ Change passwords input to password
+✔ check date age on registration @done (26/08/2022, 17:23:01)
+✔ Move to cities to backend" @done (22/08/2022, 09:46:36)
+✔ gender, yearsOld, city - these fields should be validated in back end and can't be empty on registration @done (22/08/2022, 11:03:29)
+✔ username should be unique, make middleware validator, to check if username does d=not exist in database @done (22/08/2022, 11:03:37)
+✔ make validator, to compare passwords @done (22/08/2022, 11:10:18)
+✔ registered user password, should be hashed @done (22/08/2022, 12:05:35)
+✔ Validation errors should be shown in front end if something wrong @done (22/08/2022, 11:15:25)
+✔ Check if duplicate user validation works @done (22/08/2022, 12:05:36)
+
+LOGIN:
+✔ user logins with his credentials - username and password @done (22/08/2022, 14:31:23)
+✔ if credentials is bad, user should see error @done (22/08/2022, 14:31:14)
+✔ when user logs in he should be automatically navigated to own profile page @done (22/08/2022, 17:16:09)
+✔ in login page should be autologin checkbox (stay logged in) @done (22/08/2022, 14:31:19)
+
+PROFILE:
+✔ own profile page where user have his default blank picture, and can upload more photos @done (23/08/2022, 09:45:25)
+✔ user should upload at least 2 photos (url), otherwise, he should not be able to user app @done (23/08/2022, 12:01:02)
+✔ 2 pic verification to backend @high @done (25/08/2022, 09:00:08)
+✔ remove picture button @low @done (26/08/2022, 17:22:57)
+
+FILTERS:
+✔ This page sets up what user will see in application, when he goes through profiles @done (23/08/2022, 18:41:29)
+✔ user checks which city, what gender and how old should be people shown to him @done (24/08/2022, 08:25:37)
+☐ possibility to have less filters @low 
+
+LIKE/DISLIKE PAGE:
+✔ page where user see other users profiles, one by one @done (24/08/2022, 14:35:57)
+✔ he can mark other user profile as liked, or disliked @done (24/08/2022, 14:36:08)
+✔ later user will be able to see profiles he liked @done (24/08/2022, 14:36:11)
+
+LIKES HISTORY PAGE:
+✔ in this page, user can see profiles who hi liked @done (24/08/2022, 16:25:06)
+✔ also in this page user see profiles which likes him @done (24/08/2022, 16:25:07)
+✔ likes from other users should appear instantly if you are logged in (socket.io) @done (26/08/2022, 17:22:51)
