@@ -1,20 +1,24 @@
 import mainContext from "../context/mainContext";
-import { useContext, useEffect, useRef, useState } from "react";
 import Carousel from "../components/Carousel";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const UserProfile = () => {
   const { currentUser, setPicLength } = useContext(mainContext);
+
   const [getNextStatus, setNextStatus] = useState(false);
   const [getPreviousStatus, setPreviousStatus] = useState(false);
   const [myProfile, setMyProfile] = useState();
   const [picNum, setPicNum] = useState(0);
   const [error, setError] = useState("");
+
   const addPicRef = useRef();
   const nav = useNavigate();
+
   useEffect(() => {
     refresh();
   }, []);
+
   function refresh() {
     const userData = {
       currentUser,
@@ -41,6 +45,7 @@ const UserProfile = () => {
         }
       });
   }
+
   function uploadPic() {
     const userData = {
       name: currentUser,
@@ -63,6 +68,7 @@ const UserProfile = () => {
         addPicRef.current.value = "";
       });
   }
+
   function previousPhoto() {
     setPicNum(picNum - 1);
     if (picNum - 1 <= 0) {
@@ -70,6 +76,7 @@ const UserProfile = () => {
     }
     setNextStatus(false);
   }
+
   function nextPhoto() {
     setPicNum(picNum + 1);
     if (picNum + 1 >= myProfile.profile.pictures.length - 1) {
@@ -77,6 +84,7 @@ const UserProfile = () => {
     }
     setPreviousStatus(false);
   }
+
   function remove() {
     const picData = {
       currentUser: currentUser,
@@ -93,9 +101,10 @@ const UserProfile = () => {
       .then((r) => r.json())
       .then((data) => {
         refresh();
-        console.log(data);
+        setPicNum(1)
       });
   }
+
   return (
     <div className="userWrapper">
       <div className="profileWrapper">

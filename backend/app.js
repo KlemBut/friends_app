@@ -28,7 +28,6 @@ io.on("connect", (socket) => {
             name: user
         }
         users.push(thisUser)
-        console.log(users)
     })
 
     socket.on("like", (likeData) => {

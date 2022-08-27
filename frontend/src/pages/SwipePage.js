@@ -1,7 +1,7 @@
 import mainContext from "../context/mainContext";
-import { useContext, useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Carousel from "../components/Carousel";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SwipePage = () => {
   const [filteredUsers, setFilteredUsers] = useState([]);
@@ -9,11 +9,14 @@ const SwipePage = () => {
   const [getNextStatus, setNextStatus] = useState(false);
   const [getPreviousStatus, setPreviousStatus] = useState(false);
   const [profileIndex, setProfileIndex] = useState(0);
+
   const { currentUser, socket } = useContext(mainContext);
   const nav = useNavigate();
+
   useEffect(() => {
     refresh();
   }, [profileIndex]);
+
   function refresh() {
     const userData = {
       currentUser,
@@ -32,7 +35,6 @@ const SwipePage = () => {
         if (!data.success) return nav("/");
         if(data.userMatch.length < 1) return console.log("no match")
         setFilteredUsers(data.userMatch);
-        console.log(data);
         setPreviousStatus(true)
       });
   }
@@ -67,7 +69,6 @@ const SwipePage = () => {
     fetch("http://localhost:4001/likeuser", options)
       .then((r) => r.json())
       .then((data) => {
-        console.log(data);
        if(data.success) sendNotif()
        if((profileIndex + 1) >= filteredUsers.length){
         return setFilteredUsers([])
@@ -88,6 +89,7 @@ const SwipePage = () => {
     }
     socket.emit("like", likeData)
   }
+
   return (
     filteredUsers.length < 1? 
     <div className="swipeWrapper">

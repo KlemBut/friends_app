@@ -1,15 +1,18 @@
-import mainContext from "../context/mainContext";
 import { useContext, useEffect, useRef, useState } from "react";
-import LikeComponent from "../components/LikeComponent";
 import { useNavigate } from "react-router-dom";
+import mainContext from "../context/mainContext";
+import LikeComponent from "../components/LikeComponent";
 
 const MyLikes = () => {
     const { currentUser, notif } = useContext(mainContext);
+
     const [likes, setLikes] = useState()
     const [mylikes, setmylikes] = useState(true)
     const [melikesClass, setMelikeClass] = useState("button-19")
     const [likesMeClass, setLikesMeClass] = useState("button-18")
+
     const nav = useNavigate()
+
     useEffect(() => {
         refresh()
     }, [notif])
@@ -31,10 +34,10 @@ const MyLikes = () => {
           .then((data) => {
             
             if(!data.success && !data.profile) return nav("/")
-            console.log(data)
             setLikes(data)
           });
       }
+
     function melikes() {
       setmylikes(true)
       setMelikeClass("button-19")
@@ -47,20 +50,20 @@ const MyLikes = () => {
 
     }
     return( 
-        <div className="likesWrapper">
+      <div className="likesWrapper">
         <div className="buttonWrap">
-        <button className={melikesClass} onClick={melikes}>My likes</button>
-        <button className={likesMeClass} onClick={likesme}>Likes me</button>
+          <button className={melikesClass} onClick={melikes}>My likes</button>
+          <button className={likesMeClass} onClick={likesme}>Likes me</button>
         </div>
         <div>
         {
-            mylikes?
-            <LikeComponent source={likes && likes.iLike}></LikeComponent>
-            :
-            <LikeComponent source={likes && likes.likesMe}></LikeComponent>
+          mylikes?
+          <LikeComponent source={likes && likes.iLike}></LikeComponent>
+          :
+          <LikeComponent source={likes && likes.likesMe}></LikeComponent>
         }   
         </div>
-        </div>
+      </div>
     )
 }
 

@@ -3,6 +3,7 @@ const historyScheme = require("../models/historyScheme");
 const bcrypt = require("bcrypt");
 const defaultPic =
   "https://cdn-icons-png.flaticon.com/512/1053/1053244.png?w=360";
+
 module.exports = {
   getCities: (req, res) => {
     const cities = [
@@ -68,7 +69,7 @@ module.exports = {
   },
   registerUser: async (req, res) => {
     const user = new userScheme();
-    const { name, passwordOne, passwordTwo, gender, birthday, city } = req.body;
+    const { name, passwordOne, gender, birthday, city } = req.body;
 
     const hashedPass = await bcrypt.hash(passwordOne, 10);
     const age = Math.floor((new Date() - new Date(birthday)) / 31557600000);
@@ -121,7 +122,6 @@ module.exports = {
   uploadPic: async (req, res) => {
     const { name, imgUrl } = req.body;
     let currentProfile = await userScheme.findOne({ name: name });
-    console.log(currentProfile);
     if (currentProfile.pictures[0] === defaultPic) {
       try {
         await userScheme.updateOne({ name: name }, { $pop: { pictures: -1 } });
@@ -230,7 +230,6 @@ module.exports = {
     res.send({success: true})
   },
   getHistory: async (req, res) => {
-    console.log(req.body)
     let currentUser = "";
     if (!req.session.user) {
       currentUser = req.body.currentUser;

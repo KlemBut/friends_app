@@ -18,6 +18,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState()
   const [picLength, setPicLength] = useState(0)
   const [notif, setNotif] = useState()
+
   const props = {
     currentUser,
     setCurrentUser,
@@ -27,6 +28,7 @@ function App() {
     notif,
     setNotif
   }
+  
   useEffect(() => {
     socket.on("notification", message => {
       setNotif("🕭")

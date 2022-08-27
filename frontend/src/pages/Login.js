@@ -3,11 +3,13 @@ import { useNavigate } from "react-router-dom";
 import mainContext from "../context/mainContext";
 
 const Login = () => {
-  const nav = useNavigate();
   const [error, setError] = useState();
+
+  const nav = useNavigate();
   const nameRef = useRef();
   const passwordRef = useRef();
   const sessionRef = useRef();
+
   const { setCurrentUser, socket } = useContext(mainContext);
 
   function login() {
@@ -64,6 +66,7 @@ const Login = () => {
         });
     }
   }
+  
   return (
     <div className="registerWrapper">
       <div className="itemWrapper">

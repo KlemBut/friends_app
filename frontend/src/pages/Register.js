@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 const Register = () => {
   const nameRef = useRef();
   const passwordOne = useRef();
@@ -7,9 +8,11 @@ const Register = () => {
   const genderRef = useRef();
   const birthdayRef = useRef();
   const cityRef = useRef();
+
   const [cities, setCities] = useState(["Loading..."]);
   const [error, setError] = useState("");
   const nav = useNavigate();
+
   useEffect(() => {
     fetch(`http://localhost:4001/cities/`)
       .then((res) => res.json())
@@ -17,6 +20,7 @@ const Register = () => {
         setCities(data.cities);
       });
   }, []);
+
   function register() {
     const registrationData = {
       name: nameRef.current.value,
@@ -40,6 +44,7 @@ const Register = () => {
         if (data.success === true) nav("/");
       });
   }
+  
   return (
     <div className="registerWrapper">
       <div className="itemWrapper">
