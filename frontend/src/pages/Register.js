@@ -44,7 +44,7 @@ const Register = () => {
         if (data.success === true) nav("/");
       });
   }
-  
+
   return (
     <div className="registerWrapper">
       <div className="itemWrapper">
@@ -76,7 +76,7 @@ const Register = () => {
             type="date"
             id="birthday"
             name="birthday"
-            min="1993-01-01"
+            min="1950-01-01"
             max="2005-12-31"
             ref={birthdayRef}
           />
