@@ -66,6 +66,7 @@ const UserProfile = () => {
         refresh();
         setNextStatus(false);
         addPicRef.current.value = "";
+        setError("")
       });
   }
 

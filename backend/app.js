@@ -8,7 +8,7 @@ const socketIo = require('socket.io');
 const io = socketIo(http, {cors: {origin: "http://localhost:3000"}})
 require("dotenv").config()
 
-mongoose.connect("mongodb+srv://admin:klemis@cluster0.2s1ijtw.mongodb.net/?retryWrites=true&w=majority")
+mongoose.connect(process.env.DB_CONNECTION)
 .then (res => {
     console.log("connected")
 }).catch(e => {

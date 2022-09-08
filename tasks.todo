@@ -2,7 +2,7 @@
 alt+d to compl
  REGISTRATION:
 ✔ user registers with his username and password also on registration, user fill this form: @done (22/08/2022, 12:05:31)
-☐ Change passwords input to password
+✔ Change passwords input to password @done (02/09/2022, 10:24:21)
 ✔ check date age on registration @done (26/08/2022, 17:23:01)
 ✔ Move to cities to backend" @done (22/08/2022, 09:46:36)
 ✔ gender, yearsOld, city - these fields should be validated in back end and can't be empty on registration @done (22/08/2022, 11:03:29)
